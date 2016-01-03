@@ -4,4 +4,4 @@ A responsive website to present Restaturant menu, promotional dishes and restatu
 
 The website and database is hosted using a local json-server. NPM and bower are used to manage packages and angular modules. Angular factory and service are used to describe the model to communicate with the database to fetch and update data.
 Angular templates are used to construct the web pages with help of Angular UI-Router to render selected views and build a SPA.
-Clien-server communication is done in a RESTful manner using ngResource.
+Client-server communication is done in a RESTful manner using ngResource.
