@@ -55,7 +55,10 @@
         <div class="row row-content">
             <div class="col-xs-12 col-sm-9">
                 <h2>Corporate Leadership</h2>
-               <ul class="media-list">
+                <div ng-if="!showLeadership">
+                    <h3>{{leadershipMessage}}</h3>
+                </div>
+               <ul class="media-list" ng-if="showLeadership">
                     <li class="media" ng-repeat="leader in leaders">
                         <div class="media-left media-middle">
                             <a href="#">
@@ -63,8 +66,8 @@
                             </a>
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">{{leader.name}}</h3>
-                            <h4>{{leader.designation}}</h4>
+                            <h3 class="media-heading">{{leader.name}}
+                            <small>{{leader.designation}}</small></h3>
                             <p>{{leader.description}}</p>
                         </div>
                     </li>

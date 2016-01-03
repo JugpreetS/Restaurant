@@ -7,9 +7,12 @@
                 <h3 align=center>Our Lipsmacking Culinary Creations</h3>
             </div>
             <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-				<div class="media">
+			    <div ng-if="!showDish">
+                    <h3>{{message}}</h3>
+                </div>
+                <div class="media" ng-if="showDish">
                     <div class="media-left media-middle">
-                        <a ui-sref="app.dishdetails({id:featuredDish._id})">
+                        <a ui-sref="app.dishdetails({id:featuredDish.id})">
                             <img class="media-object img-thumbnail" ng-src="{{featuredDish.image}}" altl="Featured Dish">
                         </a>
                     </div>
@@ -30,7 +33,10 @@
                 <h3 align=center>This Month's Promotions</h3>
             </div>
             <div class="col-xs-12 col-sm-9">
-				<div class="media">
+                <div ng-if="!showPromotion">
+                    <h3>{{promoMessage}}</h3>
+                </div>
+				<div class="media" ng-if="showPromotion">
                     <div class="media-left media-middle">
                         <a ui-sref="#">
                             <img class="media-object img-thumbnail" ng-src="{{promotion.image}}" altl="Promotion">
@@ -52,7 +58,10 @@
                 <h3 align=center>Meet our Culinary Specialists</h3>
             </div>
             <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-				<div class="media">
+				<div ng-if="!showLeadership">
+                    <h3>{{leadershipMessage}}</h3>
+                </div>
+                <div class="media" ng-if="showLeadership">
                     <div class="media-left media-middle">
                         <a href="#">
                             <img class="media-object img-thumbnail" ng-src={{execChef.image}} alt="Executive Chef">
@@ -63,6 +72,6 @@
                         <h4>{{execChef.designation}}</h4>
                         <p>{{execChef.description}}</p>
                     </div>
-            </div>
+                </div>
         </div>
     </div>
